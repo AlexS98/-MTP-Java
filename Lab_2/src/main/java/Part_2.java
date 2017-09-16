@@ -20,5 +20,6 @@ public class Part_2 {
             System.out.print("Elements num: ");
             n = in.nextInt();
         }
+        double[][] array = new double[n][n];
     }
 }
