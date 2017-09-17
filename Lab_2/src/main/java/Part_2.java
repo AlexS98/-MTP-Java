@@ -23,7 +23,14 @@ public class Part_2 {
         }
         Random rand = new Random();
         int[][] matrix = new int[n][n];
-        for(int i = 0; i < n; i++) for(int j = 0; j < n; j++) matrix[i][j] = rand.nextInt(100);
+        for(int i = 0; i < n; i++) for(int j = 0; j < n; j++) matrix[i][j] = rand.nextInt()%100;
+        for(int i = 0; i < n; i++){
+            int j = 0;
+            while(matrix[i][j]>0 || j > n-1){
+                matrix[i][j] = 0;
+                j++;
+            }
+        }
         showMatrix(matrix);
 
         int belowSum = 0,mainSum = 0,aboveSum = 0;
@@ -39,7 +46,7 @@ public class Part_2 {
 
         int[][] baseMatrix = new int[9][9];
         int[][] myMatrix = new int[9][9];
-        for(int i = 0; i < 9; i++) for(int j = 0; j < 9; j++) baseMatrix[i][j] = rand.nextInt(100);
+        for(int i = 0; i < 9; i++) for(int j = 0; j < 9; j++) baseMatrix[i][j] = rand.nextInt()%100;
         System.out.println("baseMatrix");
         showMatrix(baseMatrix);
         for(int i = 0; i < 9; i++)
@@ -53,8 +60,7 @@ public class Part_2 {
     public static void  showMatrix(int[][] array){
         for(int i = 0; i < array.length; i++) {
             for(int j = 0; j < array.length; j++){
-                if(array[i][j] < 10) System.out.print(" ");
-                System.out.print(array[i][j] + " ");
+                System.out.print(array[i][j] + "\t" );
             }
             System.out.println();
         }
