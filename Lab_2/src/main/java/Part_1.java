@@ -18,10 +18,21 @@ public class Part_1 {
             System.out.print("Elements num(only int): ");
             n = in.nextInt();
         }
-        double[] array = new double[n];
-        for(int i = 0; i < array.length; i++){
+        int[] array = new int[n];
+
+        for(int i = 0; i < n; i++){
             System.out.print("Enter " + i + ": ");
-            array[i] = in.nextInt();
+
+            try {
+                array[i] = getIntNumber();
+            }
+            catch (Exception e){
+                //System.out.println("Неправильное значение");
+                System.out.println(e);
+                i--;
+            }
+
+
         }
 
         double Geom_mean = 1.0;
@@ -69,5 +80,14 @@ public class Part_1 {
             if(array[i]>=0 & array[i]<=10) inter_sum += array[i];
         }
         System.out.println("Sum of items in the interval [0; 10]: " + inter_sum);
+    }
+
+    private static int getIntNumber(){
+        try {
+            return new Scanner(System.in).nextInt();
+        }
+        catch(Exception ex){
+            return getIntNumber();
+        }
     }
 }
