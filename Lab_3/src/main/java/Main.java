@@ -18,58 +18,52 @@ public class Main {
         int[] sortArray = new int[150];
         Random random = new Random();
         for (int i = 0; i < 150; i++) originalArray[i] = random.nextInt() % 100;
-
-        for (int i = 0; i < 3; i++) {
-            zeroArray(sortArray);
+        long start,end;
+        for (byte i = 0; i < 3; i++) {
             System.arraycopy(originalArray, 0, sortArray, 0, 150);
-            long start = System.nanoTime();
+            start = System.nanoTime();
             Sorts.BubbleSort(sortArray);
-            long end = System.nanoTime();
+            end = System.nanoTime();
             System.out.println("Bubble Sort " + (i + 1) + ", time: " + (end - start));
         }
 
-        for (int i = 0; i < 3; i++) {
-            zeroArray(sortArray);
+        for (byte i = 0; i < 3; i++) {
             System.arraycopy(originalArray, 0, sortArray, 0, 150);
-            long start = System.nanoTime();
-            Sorts.CoctailSort(sortArray);
-            long end = System.nanoTime();
+            start = System.nanoTime();
+            Sorts.CocktailSort(sortArray);
+            end = System.nanoTime();
             System.out.println("Cocktail Sort " + (i + 1) + ", time: " + (end - start));
         }
 
-        for (int i = 0; i < 3; i++) {
-            zeroArray(sortArray);
+        for (byte i = 0; i < 3; i++) {
             System.arraycopy(originalArray, 0, sortArray, 0, 150);
-            long start = System.nanoTime();
+            start = System.nanoTime();
             Sorts.QuickSort(sortArray, 0, sortArray.length - 1);
-            long end = System.nanoTime();
+            end = System.nanoTime();
             System.out.println("Quick Sort " + (i + 1) + ", time: " + (end - start));
         }
 
-        for (int i = 0; i < 3; i++) {
-            zeroArray(sortArray);
+        for (byte i = 0; i < 3; i++) {
             System.arraycopy(originalArray, 0, sortArray, 0, 150);
-            long start = System.nanoTime();
+            start = System.nanoTime();
             Sorts.CycleSort(sortArray);
-            long end = System.nanoTime();
+            end = System.nanoTime();
             System.out.println("Cycle Sort " + (i + 1) + ", time: " + (end - start));
         }
 
-        for (int i = 0; i < 3; i++) {
-            zeroArray(sortArray);
+        for (byte i = 0; i < 3; i++) {
             System.arraycopy(originalArray, 0, sortArray, 0, 150);
-            long start = System.nanoTime();
+            start = System.nanoTime();
             Sorts.OddEvenSort(sortArray);
-            long end = System.nanoTime();
+            end = System.nanoTime();
             System.out.println("Odd-Even Sort " + (i + 1) + ", time: " + (end - start));
         }
 
-        for (int i = 0; i < 3; i++) {
-            zeroArray(sortArray);
+        for (byte i = 0; i < 3; i++) {
             System.arraycopy(originalArray, 0, sortArray, 0, 150);
-            long start = System.nanoTime();
+            start = System.nanoTime();
             Arrays.sort(sortArray);
-            long end = System.nanoTime();
+            end = System.nanoTime();
             System.out.println("(library)Array Sort " + (i + 1) + ", time: " + (end - start));
         }
     }
@@ -78,9 +72,5 @@ public class Main {
     static void showArray(int[] array) {
         for (int item : array) System.out.print(item + "|");
         System.out.println();
-    }
-
-    static void zeroArray(int[] array) {
-        for (int i = 0; i < 150; i++) array[i] = 0;
     }
 }

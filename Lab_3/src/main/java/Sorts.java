@@ -1,4 +1,5 @@
 class Sorts {
+    private int[] sortArray;
 
     static void BubbleSort(int[] sortArray) {
         int n = sortArray.length;
@@ -10,7 +11,7 @@ class Sorts {
         }
     }
 
-    static void CoctailSort(int[] sortArray) {
+    static void CocktailSort(int[] sortArray) {
         int n = 0;
         while (n < ((sortArray.length + 1) / 2)) {
             for (int i = n; i < sortArray.length - (n + 1); i++) {
